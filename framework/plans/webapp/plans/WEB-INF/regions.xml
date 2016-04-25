@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE regions PUBLIC "-//OFBiz//DTD Regions Config//EN" "http://www.ofbiz.org/dtds/regions.dtd">
+<regions>
+    <define id='MAIN_REGION' template='/templates/main_template.jsp'>
+        <put section='title'>Application Page</put> <!-- this is a default and is meant to overridden -->
+        <put section='header' type="jpublish" content='/includes/header.ftl'/>
+        <put section='classbar' type="jpublish" content='/includes/classbar.ftl'/>
+        <put section='appbar' type="jpublish" content='/includes/appbar.ftl'/>
+        <put section='error' type="jpublish" content='/includes/errormsg.ftl'/>
+        <put section='content' content='/main.jsp'/> <!-- this is a default and is meant to overridden -->
+        <put section='footer' type="jpublish" content='/includes/footer.ftl'/>
+    </define>    
+    <define id='FRAME_REGION' template='/templates/frame_template.jsp'>
+	    <put section='title'>Application Page</put> <!-- this is a default and is meant to overridden -->
+        <put section='error' type="jpublish" content='/includes/errormsg.ftl'/>
+        <put section='content' content='/main.jsp'/> <!-- this is a default and is meant to overridden -->
+    </define>  
+	
+	<define id='Titular_Management_subMenu' region='FRAME_REGION'>
+        <put section='title'>衔称管理</put>
+        <put section='content' content='/Titular/Titular_Management_subMenu.jsp'/>
+    </define>
+	<!-- end 衔称管理 -->
+
+</regions>

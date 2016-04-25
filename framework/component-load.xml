@@ -35,4 +35,6 @@ under the License.
     <load-component component-location="testtools"/>
     <load-component component-location="webtools"/>
     <load-component component-location="images"/>
+	<load-component component-location="content"/>
+	<load-component component-location="plans"/>
 </component-loader>

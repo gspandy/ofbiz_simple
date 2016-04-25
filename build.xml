@@ -34,8 +34,8 @@ under the License.
     <property name="memory.max.param" value="-Xmx512M"/>
 
     <import file="framework/build.xml" optional="false"/>
-    <available file="applications/build.xml" property="applications.present"/>
-    <import file="applications/build.xml" optional="true"/>
+    <!-- <available file="applications/build.xml" property="applications.present"/> -->
+    <!-- <import file="applications/build.xml" optional="true"/> -->
     <available file="specialpurpose/build.xml" property="specialpurpose.present"/>
     <import file="specialpurpose/build.xml" optional="true"/>
 

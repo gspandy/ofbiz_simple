@@ -1,0 +1,42 @@
+命令行下输入：sqlplus /nolog
+
+科工表空间：hrplan_sky
+-- 创建表空间自动扩展无限制
+CREATE TABLESPACE "HRPLAN_3YKH"
+    DATAFILE 'D:\oracle\product\10.2.0\oradata\orcl\HRPLAN_3YKH.dbf' SIZE 50M
+    AUTOEXTEND
+    ON NEXT 10240K MAXSIZE UNLIMITED LOGGING EXTENT MANAGEMENT LOCAL
+    SEGMENT SPACE MANAGEMENT AUTO;
+
+建立用户：
+create user hrplan_3ykh
+        identified by hrplan
+        default tablespace HRPLAN_3YKH
+        temporary tablespace TEMP
+        profile DEFAULT
+        quota unlimited on HRPLAN_3YKH;
+
+	GRANT CONNECT TO hrplan_3ykh;
+	GRANT CREATE TYPE TO hrplan_3ykh;
+	GRANT CREATE PROCEDURE TO hrplan_3ykh;
+	GRANT CREATE TRIGGER TO hrplan_3ykh;
+	GRANT CREATE TABLE TO hrplan_3ykh;
+	GRANT DBA TO hrplan_3ykh;
+        grant debug connect session to hrplan_3ykh;
+	Disconnect;
+quit;
+
+导入：
+
+imp hrplan_3ykh/hrplan@orcl file=E:\hrplan_3ykh20110104.dmp full=y log=log.txt
+
+导出：
+exp hrplan_3ykh/hrplan@orcl file=D:\hrplan20090911.dmp
+
+删除用户
+
+drop user hrplan_htey cascade;
+
+删除表空间
+
+drop tablespace hrplan_sky including contents and datafiles;
