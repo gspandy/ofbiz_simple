@@ -70,11 +70,11 @@ under the License.
         base-permission="OFBTOOLS,CONTENTMGR"
         mount-point="/content"/>
     
-    <!-- <webapp name="contentimages"
+    <webapp name="contentimages"
         title="Content Images"
         server="default-server"
         location="webapp/contentimages"
         mount-point="/contentimages/"
-        app-bar-display="false"/> -->
+        app-bar-display="false"/>
 
 </ofbiz-component>

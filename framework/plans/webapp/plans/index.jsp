@@ -5,9 +5,9 @@
 <script type="text/javascript">
 $(function(){
 	$("#btn").click(function(){
-		$.post("login2016",function(data){
+		//$.post("login2016",function(data){
 			alert("111");
-		})
+		//})
 	})
 })
 </script>

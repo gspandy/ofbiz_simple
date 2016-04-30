@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry excluding="org/ofbiz/accounting/thirdparty/cybersource/**|org/ofbiz/accounting/thirdparty/verisign/**|org/ofbiz/accounting/thirdparty/paypal/PayPalServices.java|org/ofbiz/accounting/thirdparty/orbital/**|org/ofbiz/accounting/thirdparty/securepay/**|org/ofbiz/accounting/thirdparty/ideal/**" kind="src" path="applications/accounting/src"/>
-	<classpathentry excluding="org/ofbiz/content/openoffice/|org/ofbiz/content/report/" kind="src" path="applications/content/src"/>
-	<classpathentry kind="src" path="applications/manufacturing/src"/>
-	<classpathentry kind="src" path="applications/marketing/src"/>
-	<classpathentry excluding="org/ofbiz/order/thirdparty/taxware/**" kind="src" path="applications/order/src"/>
-	<classpathentry kind="src" path="applications/party/src"/>
-	<classpathentry excluding="ShipmentScaleApplet.java" kind="src" path="applications/product/src"/>
-	<classpathentry excluding="org/ofbiz/securityext/thirdparty/truition/TruitionCoReg.java" kind="src" path="applications/securityext/src"/>
-	<classpathentry kind="src" path="applications/humanres/src"/>
-	<classpathentry kind="src" path="applications/workeffort/src"/>
 	<classpathentry kind="src" path="framework/base/config"/>
 	<classpathentry excluding="org/ofbiz/base/config/CoberturaInstrumenter.java" kind="src" path="framework/base/src"/>
 	<classpathentry kind="src" path="framework/catalina/src"/>
@@ -27,29 +17,14 @@
 	<classpathentry excluding="org/ofbiz/webapp/view/JasperReportsPdfViewHandler.java|org/ofbiz/webapp/view/JasperReportsXmlViewHandler.java|org/ofbiz/webapp/view/JasperReportsJXlsViewHandler.java|org/ofbiz/webapp/view/JasperReportsPoiXlsViewHandler.java" kind="src" path="framework/webapp/src"/>
 	<classpathentry kind="src" path="framework/webtools/src"/>
 	<classpathentry kind="src" path="framework/widget/src"/>
-	<classpathentry kind="src" path="specialpurpose/assetmaint/src"/>
 	<classpathentry kind="src" path="specialpurpose/birt/src"/>
-	<classpathentry kind="src" path="specialpurpose/ebay/src"/>
-	<classpathentry kind="src" path="specialpurpose/ebaystore/src"/>
 	<classpathentry kind="src" path="specialpurpose/ecommerce/src"/>
 	<classpathentry kind="src" path="specialpurpose/example/src"/>
-	<classpathentry kind="src" path="specialpurpose/googlebase/src"/>
-	<classpathentry kind="src" path="specialpurpose/googlecheckout/src"/>
-	<classpathentry kind="src" path="specialpurpose/hhfacility/src"/>
 	<classpathentry kind="src" path="specialpurpose/ldap/src"/>
-	<classpathentry kind="src" path="specialpurpose/lucene/src"/>
-	<classpathentry kind="src" path="specialpurpose/oagis/src"/>
-	<classpathentry kind="src" path="specialpurpose/pos/src"/>
 	<classpathentry kind="src" path="specialpurpose/projectmgr/src"/>
 	<classpathentry kind="src" path="specialpurpose/scrum/src"/>
-	<classpathentry kind="src" path="specialpurpose/solr/src"/>
-	<classpathentry kind="src" path="specialpurpose/webpos/src"/>
-	<classpathentry kind="src" path="specialpurpose/passport/src"/>
-	<classpathentry kind="src" path="framework/plans/src"/>
-	<classpathentry kind="lib" path="applications/content/lib/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="applications/content/lib/poi-3.13-20150929.jar"/>
-	<classpathentry kind="lib" path="applications/product/lib/dozer-4.2.1.jar"/>
-	<classpathentry kind="lib" path="applications/product/lib/watermarker-0.0.4.jar"/>
+	<classpathentry excluding="org/ofbiz/content/openoffice/|org/ofbiz/content/report/" kind="src" path="framework/content/src"/>
+	<classpathentry kind="src" path="framework/party/src"/>
 	<classpathentry kind="lib" path="framework/base/lib/ant-1.9.0-ant.jar"/>
 	<classpathentry kind="lib" path="framework/base/lib/ant-1.9.0-ant-junit.jar"/>
 	<classpathentry kind="lib" path="framework/base/lib/ant-1.9.0-ant-launcher.jar"/>
@@ -201,5 +176,8 @@
 	<classpathentry kind="lib" path="framework/catalina/lib/tomcat-extras-8.0.33-tomcat-juli-adapters.jar"/>
 	<classpathentry kind="lib" path="framework/catalina/lib/tomcat-extras-8.0.33-tomcat-juli.jar"/>
 	<classpathentry kind="lib" path="framework/base/lib/xstream-1.4.9.jar"/>
+	<classpathentry kind="lib" path="framework/content/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="framework/content/lib/poi-3.13-20150929.jar"/>
+	<classpathentry kind="lib" path="framework/entity/lib/jdbc/ojdbc5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
