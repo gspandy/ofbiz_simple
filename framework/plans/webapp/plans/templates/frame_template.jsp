@@ -3,26 +3,16 @@
 <%@ taglib uri='regions' prefix='region' %>
 <html>
 <head>
-
+	<meta charset="UTF-8">
+	<title>Demo</title>
+	<link rel="stylesheet" type="text/css" href="/images/themeUI/jquery-easyui-1.4.5/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="/images/themeUI/jquery-easyui-1.4.5/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="/images/themeUI/jquery-easyui-1.4.5/demo/demo.css">
+	<script type="text/javascript" src="/images/themeUI/jquery-easyui-1.4.5/jquery.min.js"></script>
+	<script type="text/javascript" src="/images/themeUI/jquery-easyui-1.4.5/jquery.easyui.min.js"></script>
 </head>
-<body>
 <region:render section='appbar'/>
-<div class="centerarea">
-  <region:render section='header'/>
-  <div class="contentarea">
-    <div style='border: 0; margin: 0; padding: 0; width: 100%;'>
-      <table style='border: 0; margin: 0; padding: 0; width: 100%;' cellpadding='0' cellspacing='0'>
-        <tr>
-          <td width='100%' valign='top' align='left'>
-            <region:render section='error'/>
-            <region:render section='content'/>
-          </td>
-        </tr>
-      </table>       
-    </div>
-    <div class='spacer'></div>
-  </div>
-</div>
+<region:render section='error'/>
+<region:render section='content'/>
 <region:render section='footer'/>
-</body>
 </html>

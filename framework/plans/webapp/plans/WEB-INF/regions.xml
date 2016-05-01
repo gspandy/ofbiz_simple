@@ -8,6 +8,10 @@
     <!-- ====== Start View Specific Regions ====== -->   
     <define id='main' region='FRAME_REGION'>
         <put section='title'>....</put>
+        <put section='content' content='/common/main.jsp'/>
+    </define>
+	 <define id='login' region='FRAME_REGION'>
+        <put section='title'>....</put>
         <put section='content' content='/common/login.jsp'/>
     </define>
 </regions>

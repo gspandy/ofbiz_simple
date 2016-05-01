@@ -1,19 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="ofbizTags" prefix="ofbiz" %>
-<!-- -----------------------------login----------------------- -->
-<%
-	//String username = session.getAttribute("autoUserLogin").userLoginId();
-	//if(username == null){
-		//username = "";
-	//}
-%>
+
 <center>
-    <div class="screenlet login-screenlet">
+    <div class="screenlet login-screenlet" >
         <div class="screenlet-title-bar">
             <h3>登录</h3>
         </div>
         <div class="screenlet-body">
-            <form method="post" action="" name="loginform">
+            <form method="post" action="login" name="loginform">
                 <table class="basic-table" cellspacing="0">
                     <tr>
                         <td class="label">用户名：</td>
