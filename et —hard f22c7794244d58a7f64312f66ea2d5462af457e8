@@ -1,0 +1,207 @@
+[33mcommit f22c7794244d58a7f64312f66ea2d5462af457e8[m
+Author: onelazyboy <onelazyboy5@gmail.com>
+Date:   Sat Apr 30 08:15:17 2016 +0800
+
+    精简版本 V0.2.1
+    
+    更新简介描述
+
+[33mcommit d364382140a9ccb89c20ccd3abd6d67737c3a9f1[m
+Author: onelazyboy <onelazyboy5@gmail.com>
+Date:   Sat Apr 30 08:06:02 2016 +0800
+
+    精简版本 V0.2
+    
+    去除多余Containe,Component
+
+[33mcommit 16b36d8cb9ee46357c7d26ea3abe719a86353b36[m
+Author: onelazyboy <onelazyboy5@gmail.com>
+Date:   Tue Apr 26 22:49:25 2016 +0800
+
+    精简版本 V0.1.1
+    
+    注释相关配置文件
+
+[33mcommit 59f00d50f8e5c65589e62e4d34faa1fff438758e[m
+Author: onelazyboy <onelazyboy5@gmail.com>
+Date:   Mon Apr 25 22:28:44 2016 +0800
+
+    精简版本 V_0.1
+
+[33mcommit 88023d539c196cb19662a78600402427b49b876f[m
+Author: onelazyboy <onelazyboy5@gmail.com>
+Date:   Sun Apr 24 23:11:49 2016 +0800
+
+    Update README
+
+[33mcommit 297ee41fa5afb4a67e3a2c8d0b38fc3b96edfce1[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Sun Apr 24 08:45:28 2016 +0000
+
+    (OFBIZ-7022) relocate .ftl files for all the theme component.
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740682 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit 71ea09cdad6cf458a794199a8232e618fd68b5f1[m
+Author: Jacques Le Roux <jleroux@apache.org>
+Date:   Sat Apr 23 04:32:12 2016 +0000
+
+    No functional change, this file is not used so useless, removed
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740635 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit 470dc7d7412ecb4dc9fc202cac30d7b915ab4f9e[m
+Author: Jacques Le Roux <jleroux@apache.org>
+Date:   Sat Apr 23 03:51:13 2016 +0000
+
+    A patch from Swapnil M Mane for "Calling Groovy as Event generates error when delegator.find used" reported by Wai at  https://issues.apache.org/jira/browse/OFBIZ-6808
+    
+    We are using Groovy as event in the controller request, everything works fine for us but as we used delegator.find()
+    it generates the following error
+    
+    
+    ERROR: Cannot do a find that returns an EntityListIterator with no transaction in place. Wrap this call in a transaction.
+         [java] java.lang.Exception: Stack Trace
+         [java] 	at org.ofbiz.entity.GenericDelegator.find(GenericDelegator.java:1757) [ofbiz-entity.jar:?]
+         [java] 	at org.ofbiz.entity.Delegator$find.call(Unknown Source) [ofbiz-entity.jar:?]
+         [java] 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45) [groovy-all-2.2.1.jar:2.2.1]
+         [java] 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108) [groovy-all-2.2.1.jar:2.2.1]
+         [java] 	at ProductInventory$_run_closure1.doCall(ProductInventory.groovy:18) [script:?]
+    
+    Reason:
+    
+    Since we are using find method of GenericDelegator.java
+    As per the code implementation it required the transaction should exist
+       if (!TransactionUtil.isTransactionInPlace()) {
+    if not, it generate error
+        ERROR: Cannot do a find that returns an EntityListIterator with no transaction in place. Wrap this call in a transaction.
+    
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+    Solution: initialize the transaction when the groovy is called as event and commit the transaction after the completion.
+    
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740629 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit 7bd43aa9a6c712879f0d39d4ecf704ffd3e88229[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Fri Apr 22 18:53:41 2016 +0000
+
+    (OFBIZ-6831) relocate .ftl files in the specialpurpose/example component.
+    
+    Thanks Pierre for your contribution.
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740583 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit b086af1558b385b58cf1e4687bb7a55087cde069[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Fri Apr 22 18:46:03 2016 +0000
+
+    (OFBIZ-6836) relocate .ftl files in the specialpurpose/scrum component.
+    
+    Thanks Pierre for your contribution.
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740582 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit f9a62823c0d8577c2df81c88b6cc67abf818fc7f[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Fri Apr 22 18:39:49 2016 +0000
+
+    (OFBIZ-6839) relocate .ftl files in the specialpurpose/lucene component.
+    
+    Thanks Pierre for your contribution.
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740580 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit a8b1a0b666243a48e58deb950ee33fe0fdb6e024[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Fri Apr 22 18:36:22 2016 +0000
+
+    (OFBIZ-6838) relocate .ftl files in the specialpurpose/passport component.
+    
+    Thanks Pierre for your contribution.
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740579 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit c82e0a49de4b0f9acc1560d1cd91bd4b9d2eaad6[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Fri Apr 22 18:32:56 2016 +0000
+
+    (OFBIZ-6834) relocate .ftl files in the specialpurpose/googlecheckout component.
+    
+    Thanks Pierre for your contribution.
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740578 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit db200718a54f6cd027c58491eaf8477ed586ca63[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Fri Apr 22 18:25:44 2016 +0000
+
+    (OFBIZ-6833) relocate .ftl files in the specialpurpose/googlebase component.
+    
+    Thanks Pierre for your contribution.
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740577 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit 477141e694397ca68e1e8d9d2366e64db639415a[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Fri Apr 22 12:52:41 2016 +0000
+
+    (OFBIZ-6829) relocate .ftl files in the specialpurpose/ebaystore component
+    
+    Thanks Pierre for your contribution.
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740504 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit 57145760e7de430b247563805c6932290fbaa12d[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Fri Apr 22 12:43:18 2016 +0000
+
+    (OFBIZ-6829) Corrected the ebay ftl file path.
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740501 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit 71db9e577610c02340811580111c95d2ee2e1edf[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Fri Apr 22 12:41:15 2016 +0000
+
+    (OFBIZ-6829) Fixed typo.
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740499 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit cf455bbfd798b2de4104a460f73126e9d59db93f[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Fri Apr 22 12:37:21 2016 +0000
+
+    (OFBIZ-6829) relocate .ftl files in the specialpurpose/ebay component
+    
+    Thanks Pierre for your contribution.
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740498 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit aa8c1d8e3f2cd6f1f8e8fb9e16151e3c79b11dfc[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Fri Apr 22 12:28:46 2016 +0000
+
+    (OFBIZ-6823) relocate .ftl files in the framework/common component
+    
+    Thanks Pierre for your contribution.
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740497 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit b8ab0c762b0e539725a64afa991569e7bfd3bd60[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Fri Apr 22 12:02:20 2016 +0000
+
+    (OFBIZ-6821) Added missing content folder in  specialpurpose/ecommerce component
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740489 13f79535-47bb-0310-9956-ffa450edef68
+
+[33mcommit be60a728e653d5c7975897bb7884cf90adf69cf1[m
+Author: Deepak Dixit <deepak@apache.org>
+Date:   Fri Apr 22 11:42:03 2016 +0000
+
+    (OFBIZ-6821) relocate .ftl files in the specialpurpose/ecommerce component
+    Thanks Pierre for your contribution.
+    
+    git-svn-id: https://svn.apache.org/repos/asf/ofbiz/trunk@1740485 13f79535-47bb-0310-9956-ffa450e

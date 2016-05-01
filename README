@@ -1,11 +1,30 @@
-ofbiz-simple
+﻿ofbiz-simple
 ==========
 
 A simple Framework base on Ofbiz.
 [Ofibz](http://ofbiz.apache.org/)是一整套完善的企业级，以java为核心，结合很多开源项目，支持使用脚本来编写业务逻辑的开源项目。跟一般的技术框架不同，Ofbiz更大的价值体现在业务上，它也是一整套完整的企业ERP,电子商务业务框架，包括数据库，业务代码等方方面面。如果项目跟ERP，电子商务沾边，建议直接基于Ofbiz，或者大量的参考Ofbiz进行二次开发。但是做为小型新项目的起点，Ofbiz貌似一个庞然大物，无从下手，因此ofbiz-simple来了。ofbiz-simple是基于Ofbiz，并剔除了所有业务模块,延续了java语言的优势，业务逻辑可使用脚本语言(如groovy)实现，以及Entity Engine，Service Engine，Widget Engine的完美配合，使得开发过程中基本不需要重启服务器，所有书写的代码都是业务相关的，简洁的。让开发人员从琐碎的工作中脱离出来，把全部精力集中在业务实现上。
 
-==运行==
+==运行环境==
 JDK版本:1.8
+
+
+==调整说明==
+1.删除 不必要的applications,等多余功能 
+2.增加 Region
+  Region 是一个复合视图模式（在Enterprise Architecture Patterns描述的各种视图）的实现，同时也是基于David Geary著作的 Advanced Java Server Pages的一种实现。www.ofbiz.org的Docs & Books页面可以得到有关这本书更多的信息。
+区块由许多命名节（准备插入到一个模板）组成的一个区域。区块和节在每个webapp的WEB-INF/regions.xml文件里进行配置。通过使用一个类型为region的视图，区块能与基于web应用的OFBizControl Servlet协同工作。
+在JSP文件中，可以对区块进行声明，并且通过使用regions.tld文件里的标记把区块包含进来。这些标记也可以用在区块模板中，用来在模板的指定位置包含命名节。
+
+
+==hello world==
+1. 在命令行，ofbiz-simple主目录，输入 ant create-component。
+2. 根据提示，依次输入并回车 helloworld，HelloWorld，helloworld，HELLOWORLD，y。
+如果看到执行了一些创建和copy动作，提示
+
+         [echo] Component successfully created in folder D:\git\mini-ofbiz/hot-deploy/helloworld.
+         [echo]               Restart OFBiz and then visit the URL: http://localhost:8080/helloworld
+说明hello world组件创建成功了，存放于hot-deploy\helloworld。
+3. 载入demo数据，在component-load.xml做好配置,启动服务后，访问localhost:8080/helloworld。
 
 
 

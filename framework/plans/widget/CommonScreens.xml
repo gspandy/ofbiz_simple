@@ -45,4 +45,20 @@
             </widgets>
         </section>
     </screen>
+	<screen name="login">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleLogin" />
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="">
+                    <decorator-section name="body">
+                        <platform-specific>
+		            		<html><html-template location="component://example/webapp/example/common/login.ftl"/></html>
+		            	</platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
 </screens>
