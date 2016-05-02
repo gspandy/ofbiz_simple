@@ -47,3 +47,8 @@ desktop.ini
 *.patch
 .settings
 .groovy
+themes/rainbowstone/template/login.ftl
+themes/rainbowstone/template/login.ftl
+*.ftl
+themes/rainbowstone/template/login.ftl
+themes/rainbowstone/template/login.ftl

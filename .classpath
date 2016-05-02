@@ -179,5 +179,6 @@
 	<classpathentry kind="lib" path="framework/content/lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="framework/content/lib/poi-3.13-20150929.jar"/>
 	<classpathentry kind="lib" path="framework/entity/lib/jdbc/ojdbc5.jar"/>
+	<classpathentry kind="lib" path="framework/base/lib/log4j-slf4j-impl-2.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

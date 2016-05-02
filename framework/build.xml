@@ -28,6 +28,9 @@ under the License.
                webapp/build.xml,widget/build.xml,
                common/build.xml,datafile/build.xml,
                testtools/build.xml,
+			   party/build.xml,
+			   content/build.xml,
+			   plans/build.xml,
                webtools/build.xml"/>
 
     <filelist id="test-builds" dir="framework" files="base/build.xml,entity/build.xml"/>

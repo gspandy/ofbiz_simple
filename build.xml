@@ -36,8 +36,8 @@ under the License.
     <import file="framework/build.xml" optional="false"/>
     <!-- <available file="applications/build.xml" property="applications.present"/> -->
     <!-- <import file="applications/build.xml" optional="true"/> -->
-    <available file="specialpurpose/build.xml" property="specialpurpose.present"/>
-    <import file="specialpurpose/build.xml" optional="true"/>
+    <!-- <available file="specialpurpose/build.xml" property="specialpurpose.present"/>
+    <import file="specialpurpose/build.xml" optional="true"/> -->
 
     <!-- ================================================================== -->
     <!-- Initialization of all property settings                            -->
@@ -418,8 +418,8 @@ under the License.
         <antcall target="build-dev"/>
 
         <antcall target="build-framework"/>
-        <antcall target="build-applications"/>
-        <antcall target="build-specialpurpose"/>
+        <!-- <antcall target="build-applications"/> -->
+        <!-- <antcall target="build-specialpurpose"/> -->
         <externalsubant>
             <fileset dir="${basedir}/themes">
                 <include name="*/build.xml" />
@@ -437,13 +437,13 @@ under the License.
         <iterate target="jar" filelist="framework-builds"/>
     </target>
 
-    <target name="build-applications" if="${applications.present}">
+    <!-- <target name="build-applications" if="${applications.present}">
         <iterate target="jar" filelist="application-builds"/>
-    </target>
+    </target> -->
 
-    <target name="build-specialpurpose" if="${specialpurpose.present}">
+    <!-- <target name="build-specialpurpose" if="${specialpurpose.present}">
         <iterate target="jar" filelist="specialpurpose-builds"/>
-    </target>
+    </target> -->
 
     <macrodef name="hotdeployant">
       <attribute name="target" default=""/>
@@ -479,13 +479,13 @@ under the License.
         <iterate target="docs" filelist="framework-builds"/>
     </target>
 
-    <target name="docs-applications" if="${applications.present}">
+    <!-- <target name="docs-applications" if="${applications.present}">
         <iterate target="docs" filelist="application-builds"/>
-    </target>
+    </target> -->
 
-    <target name="docs-specialpurpose" if="${specialpurpose.present}">
+    <!-- <target name="docs-specialpurpose" if="${specialpurpose.present}">
         <iterate target="docs" filelist="specialpurpose-builds"/>
-    </target>
+    </target> -->
 
     <target name="docs-all" depends="build,ofbiz-init"><!--description="For committers : Build all javadoc into one tree for easier viewing by the community"  Note: this is now done automatically by Buildbot at the ASF-->
 
@@ -505,13 +505,13 @@ under the License.
           <fileset dir="${ofbiz.home.dir}/framework/testtools/lib" includes="*.jar"/>
           <fileset dir="${ofbiz.home.dir}/framework/webapp/lib" includes="*.jar"/>
           <fileset dir="${ofbiz.home.dir}/framework/webapp/build/lib" includes="*.jar"/>
-          <fileset dir="${ofbiz.home.dir}/specialpurpose/birt/lib" includes="*.jar"/>
+          <!-- <fileset dir="${ofbiz.home.dir}/specialpurpose/birt/lib" includes="*.jar"/>
           <fileset dir="${ofbiz.home.dir}/specialpurpose/ebaystore/lib" includes="*.jar"/>
           <fileset dir="${ofbiz.home.dir}/specialpurpose/googlecheckout/lib" includes="*.jar"/>
           <fileset dir="${ofbiz.home.dir}/specialpurpose/ldap/lib" includes="*.jar"/>
-          <fileset dir="${ofbiz.home.dir}/specialpurpose/pos/lib" includes="*.jar"/>
-          <fileset dir="${ofbiz.home.dir}/applications/content/lib" includes="*.jar"/>
-          <fileset dir="${ofbiz.home.dir}/applications/product/lib" includes="*.jar"/>
+          <fileset dir="${ofbiz.home.dir}/specialpurpose/pos/lib" includes="*.jar"/> -->
+          <!-- <fileset dir="${ofbiz.home.dir}/applications/content/lib" includes="*.jar"/>
+          <fileset dir="${ofbiz.home.dir}/applications/product/lib" includes="*.jar"/> -->
         </path>
 
         <property name="desc" value="API"/>
@@ -541,17 +541,17 @@ under the License.
     <target name="copy-apis">
         <mkdir dir="${site.dir}/api"/>
         <mkdir dir="${site.dir}/api/framework"/>
-        <mkdir dir="${site.dir}/api/applications"/>
-        <mkdir dir="${site.dir}/api/specialpurpose"/>
+        <!-- <mkdir dir="${site.dir}/api/applications"/>
+        <mkdir dir="${site.dir}/api/specialpurpose"/> -->
         <copy todir="${site.dir}/api/framework">
             <fileset dir="${basedir}/framework" includes="*/build/javadocs/**"/>
         </copy>
-        <copy todir="${site.dir}/api/applications">
+        <!-- <copy todir="${site.dir}/api/applications">
             <fileset dir="${basedir}/applications" includes="*/build/javadocs/**"/>
         </copy>
         <copy todir="${site.dir}/api/specialpurpose">
             <fileset dir="${basedir}/specialpurpose" includes="*/build/javadocs/**"/>
-        </copy>
+        </copy> -->
     </target>
 
     <target name="copy-dtds"
@@ -1373,7 +1373,7 @@ under the License.
             applications/product/src, applications/securityext/src, applications/workeffort/src, specialpurpose/assetmaint/src,
             specialpurpose/ebay/src, specialpurpose/ebaystore/src, specialpurpose/ecommerce/src, specialpurpose/googlebase/src,
             specialpurpose/googlecheckout/src, specialpurpose/hhfacility/src, specialpurpose/oagis/src, specialpurpose/pos/src,
-            specialpurpose/scrum/src, specialpurpose/birt/src" />
+            specialpurpose/scrum/src, specialpurpose/birt/src,framework/commonext/src, framework/content/src, framework/party/src" />
         <property name="sonar.tests" value="framework/base/src/org/ofbiz/base/test, framework/entity/src/org/ofbiz/entity/test,
             framework/service/src/org/ofbiz/service/test,
             applications/accounting/src/org/ofbiz/accounting/test, applications/content/src/org/ofbiz/content/test,
