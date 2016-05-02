@@ -9,7 +9,7 @@ JDK版本:1.8
 
 ==运行==
 
-下载代码后，在命令行，mini-ofbiz主目录下，运行
+下载代码后，在命令行，ofbiz-simple主目录下，运行
 1. 载入demo数据: ant load-demo
 2. 启动服务: ant start
 
@@ -24,9 +24,9 @@ JDK版本:1.8
 
 ======hello world======
 
-1. 在命令行，mini-ofbiz主目录，输入 ant create-component。
+1. 在命令行，ofbiz-simple主目录，输入 ant create-component。
 2. 根据提示，依次输入并回车 helloworld，HelloWorld，helloworld，HELLOWORLD，y。如果看到执行了一些创建和copy动作，提示
-         [echo] Component successfully created in folder D:\git\mini-ofbiz/hot-deploy/helloworld.
+         [echo] Component successfully created in folder D:\git\ofbiz-simple/hot-deploy/helloworld.
          [echo]               Restart OFBiz and then visit the URL: http://localhost:8080/helloworld
 说明hello world组件创建成功了，存放于hot-deploy\helloworld。
 3. 载入demo数据，在component-load.xml做好配置,启动服务后，访问localhost:8080/helloworld。
